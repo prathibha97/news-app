@@ -1,3 +1,28 @@
+type Article = {
+  author: string | null;
+  category: string;
+  country: string;
+  description: string;
+  image: string | null;
+  language: string;
+  published_at: string;
+  sources: string;
+  title: string;
+  url: string;
+};
+
+type Pagination ={
+  count: Int 
+  offset: Int
+  limit: Int
+  total: Int
+}
+
+type NewsResponse = {
+  pagination: Pagination;
+  data: Article[];
+};
+
 type Category =
   | 'business'
   | 'entertainment'
