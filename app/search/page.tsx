@@ -1,12 +1,14 @@
 import fetchNews from '../../lib/fetchNews';
 import NewsList from '../NewsList';
+import response from '../../response.json'
+
 
 interface IProps {
   searchParams?: { term: string };
 }
 
 const SearchPage = async ({ searchParams }: IProps) => {
-  const news: NewsResponse = await fetchNews(
+  const news: NewsResponse = response || await fetchNews(
     'general',
     searchParams?.term,
     true

@@ -1,12 +1,13 @@
 import { categories } from '../../../constants';
 import fetchNews from '../../../lib/fetchNews';
 import NewsList from '../../NewsList';
+import response from '../../../response.json'
 
 interface IProps {
   params: { category: Category };
 }
 const NewsCategory = async ({ params: { category } }: IProps) => {
-  const news = await fetchNews(category);
+  const news = response || await fetchNews(category);
   return (
     <div>
       <h1 className="headerTitle">{category}</h1>
