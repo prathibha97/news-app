@@ -1,3 +1,4 @@
+import LiveTimestamp from "./LiveTimestamp";
 import ReadMoreButton from "./ReadMoreButton";
 
 interface IProps {
@@ -6,7 +7,7 @@ interface IProps {
 
 const Article = ({ article }: IProps) => {
   return (
-    <article className="flex flex-col transition-all duration-200 ease-out rounded-lg shadow-sm bg-slate-100 dark:bg-slate-800 hover:scale-105 hover:shadow-lg hover:bg-slate-200">
+    <article className="flex flex-col transition-all duration-200 ease-out rounded-lg shadow-lg bg-slate-100 dark:bg-slate-800 hover:scale-105 hover:shadow-lg hover:bg-slate-200">
       {article.image && (
         <img
           src={article.image}
@@ -26,7 +27,9 @@ const Article = ({ article }: IProps) => {
 
           <footer className="flex pt-5 ml-auto space-x-1 text-xs italic text-right text-gray-400">
             <p>{article.source} -</p>
-            <p>{article.published_at}</p>
+            <p>
+              <LiveTimestamp time={article.published_at}/>
+              </p>
           </footer>
         </div>
         <ReadMoreButton article={article}/>

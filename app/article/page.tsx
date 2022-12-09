@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import LiveTimestamp from '../LiveTimestamp';
 
 interface IProps {
   searchParams?: Article;
@@ -17,7 +18,7 @@ const ArticlePage = ({ searchParams }: IProps) => {
 
   return (
     <article>
-      <section className='flex flex-col px-0 pb-24 lg:flex-row lg:px-10'>
+      <section className="flex flex-col px-0 pb-24 lg:flex-row lg:px-10">
         {article.image && (
           <img
             className="object-cover max-w-md mx-auto rounded-lg shadow-md h-50 md:max-w-lg lg:max-w-xl"
@@ -32,9 +33,11 @@ const ArticlePage = ({ searchParams }: IProps) => {
           <div className="flex space-x-4 divide-x-2">
             <h2 className="font-bold">By: {article.author || 'Unknown'}</h2>
             <h2 className="pl-4 font-bold">Source: {article.source}</h2>
-            <p className="pl-4">{article.published_at}</p>
+            <p className="pl-4">
+              <LiveTimestamp time={article.published_at} />
+            </p>
           </div>
-          <p className='pt-4'>{article.description}</p>
+          <p className="pt-4">{article.description}</p>
         </div>
       </section>
     </article>
