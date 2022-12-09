@@ -6,7 +6,7 @@ import NewsList from './NewsList';
 const HomePage = async () => {
   // fetch news data
   const news: NewsResponse =
-    response //|| (await fetchNews(categories.join(',')));
+    response || (await fetchNews(categories.join(',')));
   // set timeout for 2 seconds
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
