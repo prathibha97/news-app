@@ -1,6 +1,5 @@
 import fetchNews from '../../lib/fetchNews';
 import NewsList from '../NewsList';
-// import response from '../../response.json'
 
 interface IProps {
   searchParams?: { term: string };
