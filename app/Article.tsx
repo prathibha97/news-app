@@ -23,7 +23,7 @@ const Article = ({ article }: IProps) => {
           </section>
 
           <footer className="flex pt-5 ml-auto space-x-1 text-xs italic text-right text-gray-400">
-            <p>{article.sources} -</p>
+            <p>{article.source} -</p>
             <p>{article.published_at}</p>
           </footer>
         </div>
