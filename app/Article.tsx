@@ -1,3 +1,5 @@
+import ReadMoreButton from "./ReadMoreButton";
+
 interface IProps {
   article: Article;
 }
@@ -27,7 +29,7 @@ const Article = ({ article }: IProps) => {
             <p>{article.published_at}</p>
           </footer>
         </div>
-        {/* readmore button */}
+        <ReadMoreButton article={article}/>
       </div>
     </article>
   );
