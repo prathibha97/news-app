@@ -4,7 +4,7 @@ const sortNewsByImage = (news: NewsResponse) => {
 
   const sortedNewsResponse = {
     pagination: news.pagination,
-    data: [...newsWithImage, newsWithoutImage],
+    data: [...newsWithImage, ...newsWithoutImage],
   };
   return sortedNewsResponse;
 };

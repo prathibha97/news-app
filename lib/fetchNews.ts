@@ -71,7 +71,7 @@ const fetchNews = async (
   console.log(newsResponse);
 
   // sort function by images vs not images present
-  const news = sortNewsByImage(newsResponse.data?.myQuery);
+  const news = sortNewsByImage(newsResponse.data.myQuery);
 
   // return results
   return news;
